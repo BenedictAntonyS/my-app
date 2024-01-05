@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="HT1.css">
+  <script>
+   function submitForm() {
+    // Get form data
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const date = document.getElementById("date").value;
+    const comment = document.getElementById("comment").value;
+
+    // Prepare data for download
+    const data = `First Name: ${firstName}\nLast Name: ${lastName}\nEmail: ${email}\nPhone Number: ${phone}\nDate: ${date}\nComment: ${comment}`;
+
+    // Create a Blob containing the data
+    const blob = new Blob([data], { type: "text/plain" });
+
+    // Create a link to trigger the download
+    const link = document.createElement("a");
+    link.href = window.URL.createObjectURL(blob);
+    link.download = "formData.txt";
+
+    // Append the link to the document and trigger the download
+    document.body.appendChild(link);
+    link.click();
+
+    // Display status message
+    const statusMessage = document.getElementById("status-message");
+    statusMessage.textContent = "Form submitted! Data downloaded.";
+    statusMessage.style.color = "#4CAF50"; // Green color for success
+  }
+</script>
+
+  
+  <style>
+    
+    body {
+      min-height: 100%;
+                width:100%;
+                background-image:linear-gradient(rgba(124, 144, 255, 0.7),rgba(81, 117, 188, 0.7)),url("ht3.jpg");
+                background-repeat:none;
+                background-size:cover;
+                background-position: center;
+      
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    .content-box {
+     
+      width: 90%; 
+      height: 3760px;
+      max-width: 1300px; 
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      font-size: 20px;
+      font-family: Arial;
+    }
+
+    .intro {
+      width: 60vw;
+      height: 40vh;
+      position: relative;
+      left: 20%;
+    }
+
+    h2 {
+      background-color: rgb(56, 138, 185);
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      margin: 18px;
+      padding: 5px;
+    }
+    .img{
+      width: 700px;
+      height: 450px;
+    }
+
+    /*form*/
+
+
+.container {
+  max-width: 400px;
+  padding: 20px;
+  background-image:linear-gradient(rgba(49, 74, 220, 0.7),rgba(43, 93, 192, 0.7));
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: rgb(126, 149, 213);
+}
+
+button {
+  background-color: #266bdb;
+  color: rgb(172, 217, 238);
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+navbar{
+      font-size: x-large;
+     }
+button:hover {
+  background-color: #45a049;
+}
+
+#status-message {
+  margin-top: 10px;
+  text-align: center;
+  color: #333;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+ 
+</head>
+<body>
+  <img src="HT-main.jpg" alt="Logo" class="align">
+  <div>
+  <nav class="navbar">
+    
+    <ul class="nav-links">
+      <li><a href="Proj-Home.html">Home</a></li>
+      <li><a href="Proj-About1.html">About Us</a></li>
+      <li class="dropdown">
+        <a href="Proj-Products.html">Products</a>
+        
+        
+      </li>
+      <li class="dropdown">
+        <a href="Proj-Services.html">Services</a>
+        
+        <ul class="dropdown-content">
+          <li><a href="#Service 1">Chip level servicing</a></li>
+          <li><a href="#Service 2">Networking and Configuring</a></li>
+          <li><a href="#Service 3">Closed Circuit Television Systems</a></li>
+          <li><a href="#Service 3">Fire wall</a></li>
+          <li><a href="#Service 3">Solar panels</a></li>
+        </ul>
+      </li>
+      <li><a href="Proj-Support and contact.html">Support & Contact</a></li>
+    </ul>
+    
+  </nav>
+</div>
+
+  
+</div>
+<center>
+<div style="padding:20px;">
+ <div class="container">
+  <form id="myForm">
+    <h1>Contact Us</h1>
+
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="comment">Messege and Query:</label>
+    <textarea id="comment" name="comment" required="required" placeholder="enter your Query here"></textarea>
+
+    <div id="status-message"></div>
+
+    <button type="button" onclick="submitForm()">Submit</button>
+  </form>
+</div></center>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</div>
+<div>
+  <footer>
+    <div class="footer-content">
+      <div class="contact-info">
+        <h3>Contact Us</h3>
+       
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; No. 18 I (DEEPAK) I 1st Cross I V. R. Layout I J. P. Nagar 1st Phase I<br>
+        Behind Rajalakshmi Kalyan Mantap I Off Sarakki Main Road I<br>
+        Bangalore : 560 078 I Karnataka I India<br>
+        Mobile: +91  94483 53416 I +91  63608 26254 / E-Mail: harshithatechnologies@gmail.com All rights reserved.</p>
+    </div>
+  </footer>
+  </div>
+</body>
+</html>
+
